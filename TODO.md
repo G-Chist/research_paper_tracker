@@ -1,0 +1,6 @@
+- Make sure usernames are unique
+- User pages
+- Read section
+- To-read section
+- Paper parsing function
+- Favorite authors section
