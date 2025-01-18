@@ -1,4 +1,4 @@
-- Make sure usernames are unique
+- ~~Make sure usernames are unique~~
 - User pages
 - Read section
 - To-read section

@@ -23,7 +23,7 @@ def login():
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
-            flash('Email does not exist.', category='error')
+            flash('This email is not registered.', category='error')
 
     return render_template("login.html", user=current_user)
 
@@ -46,6 +46,11 @@ def sign_up():
         user = User.query.filter_by(email=email).first()
         if user:
             flash('Email already exists.', category='error')
+
+        username_checker = User.query.filter_by(username=username).first()
+        if username_checker:
+            flash('This username is taken.', category='error')
+
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(username) < 2:
