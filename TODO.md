@@ -1,6 +1,7 @@
 - ~~Make sure usernames are unique~~
-- User pages
+- ~~Add user pages~~
 - Read section
 - To-read section
 - Paper parsing function
 - Favorite authors section
+- Add fancy CSS

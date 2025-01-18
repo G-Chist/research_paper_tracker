@@ -1,11 +1,17 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Note
+from .models import Note, User
 from . import db
 import json
+import sqlalchemy as sa
 
 views = Blueprint('views', __name__)
 
+@views.route('/user/<username>', methods=['GET', 'POST'])
+@login_required
+def user(username):
+    user = db.first_or_404(sa.select(User).where(User.username == username))
+    return render_template('user.html', user=user)
 
 @views.route('/', methods=['GET', 'POST'])
 @login_required
