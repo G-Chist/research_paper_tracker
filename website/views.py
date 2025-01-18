@@ -29,13 +29,17 @@ def home():
                 if len(read) < 1:
                     flash('Link is too short!', category='error')
                 else:
-                    new_paper_read = PaperRead(link=read,
-                                         authors="",
-                                         title="",
-                                         user_id=current_user.id)  # providing the schema for the paper
-                    db.session.add(new_paper_read)  # adding the paper to the database
-                    db.session.commit()
-                    flash('Paper added!', category='success')
+                    scraped_dict = scraper.scrapeMain(read)
+                    if scraped_dict.get('error'):
+                        flash('Invalid URL!', category='error')
+                    else:
+                        new_paper_read = PaperRead(link=read,
+                                             authors=', '.join(scraped_dict.get('authors')),
+                                             title=scraped_dict.get('title'),
+                                             user_id=current_user.id)  # providing the schema for the paper
+                        db.session.add(new_paper_read)  # adding the paper to the database
+                        db.session.commit()
+                        flash('Paper added!', category='success')
             except TypeError:
                 flash('Server side error! TypeError', category='error')
 

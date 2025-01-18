@@ -14,8 +14,8 @@
       <h2 class="papers_list">Papers read:</h2>
         {% for paper_read in user.papers_read %}
           <li class="list-group-item">
-            {{ paper_read.link }}
-
+            <p>{{ paper_read.authors }}</p>
+            <p>{{ paper_read.title }}</p>
             <form action="/delete-paper-read" method="POST" style="display: inline;">
               <input type="hidden" name="paperReadId" value="{{ paper_read.id }}">
               <button type="submit" name="deletionRead" value="{{ paper_read.id }}" class="close">
