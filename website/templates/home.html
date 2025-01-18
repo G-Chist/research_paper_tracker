@@ -10,11 +10,20 @@
   </li>
   {% endfor %}
 </ul>
+
 <form method="POST">
   <br />
   <div align="center">
-    <button type="submit" class="btn btn-primary" id="btn-add-read">Add paper you've read</button>
-    <button type="submit" class="btn btn-primary" id="btn-add-to-read">Add paper to read</button>
+    <textarea name="textfield-read" id="textfield-read" class="form-control"></textarea>
+    <button type="submit" class="btn btn-primary" id="btn-add-read">Add a paper you've read</button>
+  </div>
+</form>
+
+<form method="POST">
+  <br />
+  <div align="center">
+    <textarea name="textfield-to-read" id="textfield-to-read" class="form-control"></textarea>
+    <button type="submit" class="btn btn-primary" id="btn-add-to-read">Add a paper to read</button>
   </div>
 </form>
 {% endblock %}
