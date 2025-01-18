@@ -14,7 +14,7 @@ class Scraper:
     """
     initialises the class
     """
-    def __init__(self, main_url='https://arxiv.org/abs/2307.11013'):
+    def __init__(self, main_url):
         self.main_url = main_url
 
 
