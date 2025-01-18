@@ -108,6 +108,7 @@ def home():
 
 
 @views.route('/delete-paper-read', methods=['POST'])
+@login_required
 def delete_paper_read():
     print("Delete paper function called!")
     paperReadId = request.form.get('paperReadId')  # Get the paperReadId from the form data
@@ -129,6 +130,7 @@ def delete_paper_read():
 
 
 @views.route('/delete-paper-to-read', methods=['POST'])
+@login_required
 def delete_paper_to_read():
     print("Delete paper function called!")
     paperToReadId = request.form.get('paperToReadId')  # Get the paperReadId from the form data
@@ -147,3 +149,9 @@ def delete_paper_to_read():
         print(f"No to-read paper found with ID {paperToReadId}.")
 
     return redirect('/')  # Redirect back to the homepage or any other page
+
+
+@views.route('/faq', methods=['GET', 'POST'])
+@login_required
+def faq():
+    return render_template('faq.html', user=current_user)

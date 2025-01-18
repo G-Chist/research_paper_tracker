@@ -51,3 +51,10 @@
   padding: 0;              /* Removes default padding */
   margin: 0;               /* Removes default margin */
 }
+
+.text-faq-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  margin: 3vh 0vw 3vh 0vw;  /* Top, right, bottom, left margin */
+}
