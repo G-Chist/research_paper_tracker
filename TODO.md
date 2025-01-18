@@ -1,5 +1,6 @@
 - ~~Make sure usernames are unique~~
 - ~~Add user pages~~
+- Add info to user pages
 - Read section
 - To-read section
 - Paper parsing function
