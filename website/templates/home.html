@@ -1,11 +1,11 @@
 <!-- This is home.html -->
-
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">  <!-- Specifies a style sheet -->
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
 <div align="center"><h1>Your papers</h1></div>
 
 <div align="center" class="container-homepage">
   <!-- Papers Read Section -->
-  <div class="container-papers-read"> <!-- Added this wrapping div -->
+  <div class="container-papers"> <!-- Added this wrapping div -->
     <form method="POST">
       <br />
       <div align="center">
@@ -15,7 +15,7 @@
       <div align="center">
         <h2 class="papers_list">Papers read:</h2>
           {% for paper_read in user.papers_read %}
-            <li class="list-group-item">
+            <li class="list-group-item li-papers">
 
               <p>{{ paper_read.title }}</p>
               <p>{{ paper_read.authors }}</p>
@@ -34,7 +34,7 @@
   </div> <!-- End of Papers Read Section -->
 
   <!-- Papers To Read Section -->
-  <div class="container-papers-to-read"> <!-- Added this wrapping div -->
+  <div class="container-papers"> <!-- Added this wrapping div -->
     <form method="POST">
       <br />
       <div align="center">
@@ -44,7 +44,7 @@
       <div align="center">
         <h2 class="papers_list">Papers to read:</h2>
           {% for paper_to_read in user.papers_to_read %}
-            <li class="list-group-item">
+            <li class="list-group-item li-papers">
 
               <p>{{ paper_to_read.title }}</p>
               <p>{{ paper_to_read.authors }}</p>
