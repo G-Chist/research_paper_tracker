@@ -14,7 +14,7 @@
       </div>
       <div align="center">
         <h2 class="papers_list">Papers read ({{ user.papers_read|length }}):</h2>
-          <ul>
+          <ul class="ul-centered">
             {% for paper_read in user.papers_read %}
               <li class="list-group-item li-papers">
 
@@ -45,7 +45,7 @@
       </div>
       <div align="center">
         <h2 class="papers_list">Papers to read ({{ user.papers_to_read|length }}):</h2>
-          <ul>
+          <ul class="ul-centered">
             {% for paper_to_read in user.papers_to_read %}
               <li class="list-group-item li-papers">
 
