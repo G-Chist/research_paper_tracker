@@ -26,5 +26,5 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     username = db.Column(db.String(150), unique=True)
-    papers_read = db.relationship('PaperRead')
-    papers_to_read = db.relationship('PaperToRead')
+    papers_read = db.relationship('PaperRead', cascade="all, delete-orphan")
+    papers_to_read = db.relationship('PaperToRead', cascade="all, delete-orphan")
