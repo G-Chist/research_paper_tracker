@@ -4,6 +4,6 @@
 - Add info to user pages
 - Read section
 - To-read section
-- Paper parsing function
+- ~~Paper parsing function~~
 - Favorite authors section
 - Add fancy CSS
