@@ -16,7 +16,7 @@
 }
 
 .button-papers {
-  width: 90%; /* 90% of the container width */
+  width: 100%; /* 100% of the container width */
 }
 
 .container-papers {
@@ -38,4 +38,8 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.papers_list {
+  text-align: center;
 }
