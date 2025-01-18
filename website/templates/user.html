@@ -1,5 +1,4 @@
-<!-- This is user.html -->
-
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">  <!-- Specifies a style sheet -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,38 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<div class="user-container">
     <h1>{{ user.username }}</h1>
+</div>
+
+<div class="container-userpage">
+
+<div class="container-papers">
+    <h2 class="papers_list">Papers read ({{ user.papers_read|length }}):</h2>
+    <ul>
+        {% for paper_read in user.papers_read %}
+        <li class="list-group-item li-papers">
+            <p>{{ paper_read.title }} ({{ paper_read.authors }})</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="container-papers">
+    <h2 class="papers_list">Papers to read ({{ user.papers_to_read|length }}):</h2>
+    <ul>
+        {% for paper_to_read in user.papers_to_read %}
+        <li class="list-group-item li-papers">
+            <p>{{ paper_to_read.title }} ({{ paper_to_read.authors }})</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+</div>
+
 {% endblock %}
+
 </body>
 </html>

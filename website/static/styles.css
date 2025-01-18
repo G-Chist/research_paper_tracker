@@ -3,6 +3,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .li-papers {
   word-wrap: break-word; /* Allows breaking long words to wrap inside the container */
   white-space: normal;   /* Ensures the text wraps instead of staying in one line */
@@ -13,13 +14,28 @@
   min-height: 5%;
   align-items: flex-start; /* Align content to the start */
 }
+
 .button-papers {
   width: 90%; /* 90% of the container width */
 }
+
 .container-papers {
   min-width: 45%;
   max-width: 45%;
 }
+
 .hidden {
   opacity: 0%;
+}
+
+.user-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+}
+
+.container-userpage {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
