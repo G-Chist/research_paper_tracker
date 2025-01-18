@@ -1,10 +1,7 @@
-import os
 import re
 
 from bs4 import BeautifulSoup
 import requests
-
-from Services.ScraperTest import submission_date
 
 """
 This class scrapes relevant information from articles in researchgate.

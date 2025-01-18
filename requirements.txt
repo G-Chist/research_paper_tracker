@@ -1,3 +1,5 @@
 flask
 Flask-SQLAlchemy
 flask-login
+bs4
+requests

@@ -4,6 +4,7 @@ from .models import PaperRead, PaperToRead, User
 from . import db
 import json
 import sqlalchemy as sa
+import scraper
 
 views = Blueprint('views', __name__)
 
