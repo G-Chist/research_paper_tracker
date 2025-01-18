@@ -8,6 +8,7 @@ class PaperRead(db.Model):
     title = db.Column(db.String(10000))
     authors = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
+    link = db.Column(db.String(10000))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
@@ -16,6 +17,7 @@ class PaperToRead(db.Model):
     title = db.Column(db.String(10000))
     authors = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
+    link = db.Column(db.String(10000))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
