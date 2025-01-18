@@ -64,3 +64,7 @@
 .faq-answer {
   margin: 3vh 0vw 3vh 0vw;  /* Top, right, bottom, left margin */
 }
+
+.form-control {
+  resize: none; /* Disables resizing */
+}
