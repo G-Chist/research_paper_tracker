@@ -21,7 +21,7 @@
     <ul class="ul-centered">
         {% for paper_read in user.papers_read %}
         <li class="list-group-item li-papers">
-            <p>{{ paper_read.title }} ({{ paper_read.authors }})</p>
+            <p><a href={{ paper_read.link }}>{{ paper_read.title }}</a> ({{ paper_read.authors }})</p>
         </li>
         {% endfor %}
     </ul>
@@ -32,7 +32,7 @@
     <ul class="ul-centered">
         {% for paper_to_read in user.papers_to_read %}
         <li class="list-group-item li-papers">
-            <p>{{ paper_to_read.title }} ({{ paper_to_read.authors }})</p>
+            <p><a href={{ paper_to_read.link }}>{{ paper_to_read.title }}</a> ({{ paper_to_read.authors }})</p>
         </li>
         {% endfor %}
     </ul>
