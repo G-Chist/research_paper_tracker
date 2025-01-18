@@ -2,7 +2,7 @@
 - ~~Add user pages~~
 - ~~Remodel database~~
 - ~~Add info to user pages~~
-- Home Page
+- ~~Home Page~~
   - Read section
     - make a different layout for the title and author, with layout of title followed by authors on next line
     - ~~color green~~
