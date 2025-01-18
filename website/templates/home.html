@@ -16,7 +16,7 @@
 
             <form action="/delete-paper-read" method="POST" style="display: inline;">
               <input type="hidden" name="paperReadId" value="{{ paper_read.id }}">
-              <button type="submit" name="deletion" value="{{ paper_read.id }}" class="close">
+              <button type="submit" name="deletionRead" value="{{ paper_read.id }}" class="close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </form>
@@ -37,6 +37,14 @@
         {% for paper_to_read in user.papers_to_read %}
           <li class="list-group-item">
             {{ paper_to_read.link }}
+
+            <form action="/delete-paper-to-read" method="POST" style="display: inline;">
+              <input type="hidden" name="paperToReadId" value="{{ paper_to_read.id }}">
+              <button type="submit" name="deletionToRead" value="{{ paper_to_read.id }}" class="close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </form>
+
           </li>
         {% endfor %}
     </div>

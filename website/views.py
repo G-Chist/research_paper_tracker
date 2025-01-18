@@ -54,19 +54,32 @@ def home():
             except TypeError:
                 flash('Server side error! TypeError', category='error')
 
-        # Check if the delete button was triggered
-        deletion = request.form.get('deletion')
-        if deletion:
-            note = PaperRead.query.get(deletion)
+        # Check if the delete buttons were triggered
+        deletionRead = request.form.get('deletionRead')
+        if deletionRead:
+            note = PaperRead.query.get(deletionRead)
             if note:
                 if note.user_id == current_user.id:
                     db.session.delete(note)
                     db.session.commit()
-                    print(f"Paper with ID {deletion} deleted.")
+                    print(f"Paper with ID {deletionRead} deleted.")
                 else:
-                    print("Unauthorized deletion attempt.")
+                    print("Unauthorized deletionRead attempt.")
             else:
-                print(f"No paper found with ID {deletion}.")
+                print(f"No paper found with ID {deletionRead}.")
+
+        deletionToRead = request.form.get('deletionToRead')
+        if deletionToRead:
+            note = PaperToRead.query.get(deletionToRead)
+            if note:
+                if note.user_id == current_user.id:
+                    db.session.delete(note)
+                    db.session.commit()
+                    print(f"Paper with ID {deletionToRead} deleted.")
+                else:
+                    print("Unauthorized deletionRead attempt.")
+            else:
+                print(f"No paper found with ID {deletionToRead}.")
 
     return render_template("home.html", user=current_user)
 
@@ -83,11 +96,31 @@ def delete_paper_read():
         if note.user_id == current_user.id:
             db.session.delete(note)
             db.session.commit()
-            print(f"Paper with ID {paperReadId} deleted.")
+            print(f"Read paper with ID {paperReadId} deleted.")
         else:
             print("Unauthorized deletion attempt.")
     else:
-        print(f"No paper found with ID {paperReadId}.")
+        print(f"No read paper found with ID {paperReadId}.")
 
     return redirect('/')  # Redirect back to the homepage or any other page
 
+
+@views.route('/delete-paper-to-read', methods=['POST'])
+def delete_paper_to_read():
+    print("Delete paper function called!")
+    paperToReadId = request.form.get('paperToReadId')  # Get the paperReadId from the form data
+
+    print(f"Delete request received for paper ID: {paperToReadId}")
+
+    note = PaperToRead.query.get(paperToReadId)
+    if note:
+        if note.user_id == current_user.id:
+            db.session.delete(note)
+            db.session.commit()
+            print(f"To-read paper with ID {paperToReadId} deleted.")
+        else:
+            print("Unauthorized deletion attempt.")
+    else:
+        print(f"No to-read paper found with ID {paperToReadId}.")
+
+    return redirect('/')  # Redirect back to the homepage or any other page
