@@ -1,7 +1,7 @@
 - ~~Make sure usernames are unique~~
 - ~~Add user pages~~
 - ~~Remodel database~~
-- Add info to user pages
+- ~~Add info to user pages~~
 - Home Page
   - Read section
     - make a different layout for the title and author, with layout of title followed by authors on next line
@@ -13,5 +13,5 @@
 - ~~Paper parsing function~~
 - Favorite authors section
 - Add fancy CSS
-- Make page layout consistent
+- ~~Make page layout consistent~~
 - ~~Restrict duplicate papers~~
