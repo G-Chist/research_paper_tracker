@@ -44,4 +44,8 @@ The app is designed by [Matvei Shestopalov](https://github.com/G-Chist) and [Sha
 
 ## What we learned
 
-Building GoatReads was an excellent way to put our skills to use and develop new knowledge.
+Building GoatReads was an excellent way to put our existing skills to use and develop new knowledge.
+
+The skills we got to practice are Flask development, CSS, Git, web parsing, and testing.
+
+The skills we learned are database integration, user profile management, REST API design, AJAX for asynchronous updates, deploying a web application on a server, managing authentication and authorization, and debugging real-world web applications
