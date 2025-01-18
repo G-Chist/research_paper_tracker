@@ -7,4 +7,4 @@
 - ~~Paper parsing function~~
 - Favorite authors section
 - Add fancy CSS
-- Restrict duplicate papers
+- ~~Restrict duplicate papers~~

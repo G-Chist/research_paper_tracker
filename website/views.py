@@ -30,8 +30,15 @@ def home():
                     flash('Link is too short!', category='error')
                 else:
                     scraped_dict = scraper.scrapeMain(read)
+                    # Check if a paper with the same link already exists for the current user
+                    existing_paper_read = PaperRead.query.filter_by(link=read, user_id=current_user.id).first()
+                    existing_paper_to_read = PaperToRead.query.filter_by(link=read, user_id=current_user.id).first()
                     if scraped_dict.get('error'):
                         flash('Invalid URL!', category='error')
+                    elif existing_paper_read:
+                        flash('This paper has already been added!', category='error')
+                    elif existing_paper_to_read:
+                        flash('You\'re planning to read this paper!', category='error')
                     else:
                         new_paper_read = PaperRead(link=read,
                                              authors=', '.join(scraped_dict.get('authors')),
@@ -50,16 +57,23 @@ def home():
                     flash('Link is too short!', category='error')
                 else:
                     scraped_dict = scraper.scrapeMain(to_read)
+                    # Check if a paper with the same link already exists for the current user
+                    existing_paper_read = PaperRead.query.filter_by(link=to_read, user_id=current_user.id).first()
+                    existing_paper_to_read = PaperToRead.query.filter_by(link=to_read, user_id=current_user.id).first()
                     if scraped_dict.get('error'):
                         flash('Invalid URL!', category='error')
+                    elif existing_paper_to_read:
+                        flash('This paper has already been added!', category='error')
+                    elif existing_paper_read:
+                        flash('You\'ve already read this paper!', category='error')
                     else:
                         new_paper_to_read = PaperToRead(link=to_read,
                                                    authors=', '.join(scraped_dict.get('authors')),
                                                    title=scraped_dict.get('title'),
                                                    user_id=current_user.id)  # providing the schema for the paper
-                    db.session.add(new_paper_to_read)  # adding the paper to the database
-                    db.session.commit()
-                    flash('Paper added!', category='success')
+                        db.session.add(new_paper_to_read)  # adding the paper to the database
+                        db.session.commit()
+                        flash('Paper added!', category='success')
             except TypeError:
                 flash('Server side error! TypeError', category='error')
 
