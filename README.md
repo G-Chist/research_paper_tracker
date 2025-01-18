@@ -39,3 +39,9 @@ Go to http://127.0.0.1:5000
 ## Contributors
 
 The app is designed by [Matvei Shestopalov](https://github.com/G-Chist) and [Shamsher Ghising Tamang](https://github.com/shamshertamang).
+
+---
+
+## What we learned
+
+Building GoatReads was an excellent way to put our skills to use and develop new knowledge.
