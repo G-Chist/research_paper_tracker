@@ -2,8 +2,14 @@
 - ~~Add user pages~~
 - ~~Remodel database~~
 - Add info to user pages
-- Read section
-- To-read section
+- Home Page
+  - Read section
+    - make a different layout for the title and author, with layout of title followed by authors on next line
+    - ~~color green~~
+  - To-read section
+    - make a different layout for the title and author, with layout of title followed by authors on next line
+    - ~~color yellow~~
+  - ~~make the buttons of same size~~
 - ~~Paper parsing function~~
 - Favorite authors section
 - Add fancy CSS
