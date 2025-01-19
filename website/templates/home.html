@@ -56,8 +56,18 @@
                   </button>
 
                 <p><a href={{ paper_to_read.link }}>{{ paper_to_read.title }}</a> ({{ paper_to_read.authors }})</p>
-
                 </form>
+
+                 <!-- I am trying to make a mark as done-->
+                <form action="/mark-paper-as-read" method="POST" style="display: inline;">
+                  <input type="hidden" name="paperMarkAsReadId" value="{{ paper_to_read.id }}">
+                  <button type="submit" name="markAsDone" class="btn btn-success">
+                      Mark as Read
+                  </button>
+                </form>
+                <!-- Mark as Done Button completed -->
+
+
 
               </li>
             {% endfor %}
