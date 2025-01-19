@@ -30,10 +30,10 @@
 }
 
 .user-container {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    margin: 2vh 0vw 2vh 0vw;  /* Top, right, bottom, left margin */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  margin: 2vh 0vw 2vh 0vw;  /* Top, right, bottom, left margin */
 }
 
 .container-userpage {
@@ -67,4 +67,13 @@
 
 .form-control {
   resize: none; /* Disables resizing */
+}
+
+.mark-read-link {
+  text-decoration: none;
+  color: green;
+}
+
+.mark-read-container {
+  text-align: right;
 }
