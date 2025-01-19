@@ -151,10 +151,9 @@ def delete_paper_to_read():
     return redirect('/')  # Redirect back to the homepage or any other page
 
 
-@views.route('/mark-paper-as-read', methods=['POST'])
+@views.route('/mark-paper-as-read/<paper_id>', methods=['GET', 'POST'])
 @login_required
-def mark_paper_as_read():
-    paper_id = request.form.get('paperMarkAsReadId')
+def mark_paper_as_read(paper_id):
 
     if paper_id:
         # Get the paper from the "Papers To Read" section
