@@ -151,6 +151,33 @@ def delete_paper_to_read():
     return redirect('/')  # Redirect back to the homepage or any other page
 
 
+@views.route('/mark-paper-as-read', methods=['POST'])
+@login_required
+def mark_paper_as_read():
+    paper_id = request.form.get('paperMarkAsReadId')
+
+    if paper_id:
+        # Get the paper from the "Papers To Read" section
+        paper_to_read = PaperToRead.query.get(paper_id)
+
+        if paper_to_read and paper_to_read.user_id == current_user.id:
+            # Move the paper to the "Papers Read" section
+            new_paper_read = PaperRead(
+                link=paper_to_read.link,
+                authors=paper_to_read.authors,
+                title=paper_to_read.title,
+                user_id=current_user.id
+            )
+            db.session.add(new_paper_read)
+            db.session.delete(paper_to_read)
+            db.session.commit()
+            flash('Paper marked as read!', category='success')
+        else:
+            flash('This paper does not belong to you or does not exist!', category='error')
+
+    return redirect('/')
+
+
 @views.route('/faq', methods=['GET', 'POST'])
 @login_required
 def faq():
